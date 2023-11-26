@@ -8,8 +8,8 @@ import getJokes from '../api/promises';
 const init = () => {
   document.querySelector('#app').innerHTML = `
   <button id="getjoke" type="button" class="btn btn-light">Get A Joke</button>
-  <div id='jokespot'></div>
-  <div id='jokespot2'></div>`;
+  <div id='jokespot'</div>
+  <div id='jokespot2'</div>`;
   document
     .querySelector('#getjoke')
     .addEventListener('click', () => {

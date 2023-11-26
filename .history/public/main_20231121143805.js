@@ -14,6 +14,7 @@ const init = () => {
     .querySelector('#getjoke')
     .addEventListener('click', () => {
       getJokes().then((data) => {
+        console.warn('click');
         renderToDom('#jokespot', data.setup);
         renderToDom('#jokespot2', data.delivery);
       });

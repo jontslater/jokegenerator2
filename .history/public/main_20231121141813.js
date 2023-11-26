@@ -3,7 +3,6 @@
 import 'bootstrap'; // import bootstrap elements and js
 import '../styles/main.scss';
 import renderToDom from '../utils/renderToDom';
-import getJokes from '../api/promises';
 
 const init = () => {
   document.querySelector('#app').innerHTML = `
@@ -18,6 +17,7 @@ const init = () => {
         renderToDom('#jokespot2', data.delivery);
       });
     });
+
   // USE WITH FIREBASE AUTH
   // ViewDirectorBasedOnUserAuthStatus();
 };

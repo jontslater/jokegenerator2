@@ -18,6 +18,7 @@ const init = () => {
         renderToDom('#jokespot2', data.delivery);
       });
     });
+
   // USE WITH FIREBASE AUTH
   // ViewDirectorBasedOnUserAuthStatus();
 };

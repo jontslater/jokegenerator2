@@ -2,22 +2,24 @@
 // import ViewDirectorBasedOnUserAuthStatus from '../utils/viewDirector';
 import 'bootstrap'; // import bootstrap elements and js
 import '../styles/main.scss';
+import getRequest from '../api/promises';
 import renderToDom from '../utils/renderToDom';
-import getJokes from '../api/promises';
 
 const init = () => {
   document.querySelector('#app').innerHTML = `
   <button id="getjoke" type="button" class="btn btn-light">Get A Joke</button>
   <div id='jokespot'></div>
-  <div id='jokespot2'></div>`;
+  <div id='jokespot'></div>`;
+  console.warn('YOU ARE UP AND RUNNING!');
   document
     .querySelector('#getjoke')
     .addEventListener('click', () => {
-      getJokes().then((data) => {
+      getRequest().then((data) => {
         renderToDom('#jokespot', data.setup);
-        renderToDom('#jokespot2', data.delivery);
+        renderToDom('jokespot2', data.delivery);
       });
     });
+
   // USE WITH FIREBASE AUTH
   // ViewDirectorBasedOnUserAuthStatus();
 };

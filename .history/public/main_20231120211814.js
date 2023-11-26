@@ -2,8 +2,8 @@
 // import ViewDirectorBasedOnUserAuthStatus from '../utils/viewDirector';
 import 'bootstrap'; // import bootstrap elements and js
 import '../styles/main.scss';
+import getRequest from '../api/promises';
 import renderToDom from '../utils/renderToDom';
-import getJokes from '../api/promises';
 
 const init = () => {
   document.querySelector('#app').innerHTML = `
@@ -13,11 +13,12 @@ const init = () => {
   document
     .querySelector('#getjoke')
     .addEventListener('click', () => {
-      getJokes().then((data) => {
+      getRequest().then((data) => {
         renderToDom('#jokespot', data.setup);
         renderToDom('#jokespot2', data.delivery);
       });
     });
+
   // USE WITH FIREBASE AUTH
   // ViewDirectorBasedOnUserAuthStatus();
 };
